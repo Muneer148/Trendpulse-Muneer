@@ -41,3 +41,8 @@ for item in data["coins"]:
 
 print(coins)
 print(len(coins))
+
+import pandas as pd
+
+df = pd.DataFrame(coins)
+print(df)
