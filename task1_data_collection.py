@@ -43,3 +43,7 @@ def get_trending_coins():
     print(len(coins))
 
     return coins
+
+if__name__ == "__main__":
+    coins = get_trending_coins()
+    print(coins)
