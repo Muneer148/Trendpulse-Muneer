@@ -25,25 +25,25 @@ def get_trending_coins():
 
     for item in data["coins"]:
         coin = item["item"]
-
-    coin_info = {
-    "name": coin["name"],
-    "symbol": coin["symbol"],
-    "market_cap_rank": coin["market_cap_rank"],
-    "price": coin["data"]["price"],
-    "price_change_24h": coin["data"]["price_change_percentage_24h"]["usd"],
-    "market_cap": coin["data"]["market_cap"],
-    "total_volume": coin["data"]["total_volume"],
-    "score": coin["score"]
-    }
-
-    coins.append(coin_info)
+        
+        coin_info = {
+            "name": coin["name"],
+            "symbol": coin["symbol"],
+            "market_cap_rank": coin["market_cap_rank"],
+            "price": coin["data"]["price"],
+            "price_change_24h": coin["data"]["price_change_percentage_24h"]["usd"],
+            "market_cap": coin["data"]["market_cap"],
+            "total_volume": coin["data"]["total_volume"],
+            "score": coin["score"]
+        }
+        
+        coins.append(coin_info)
 
     print(coins)
     print(len(coins))
 
     return coins
 
-if__name__ == "__main__":
+if __name__ == "__main__":
     coins = get_trending_coins()
     print(coins)
