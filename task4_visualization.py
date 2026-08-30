@@ -4,11 +4,7 @@ import matplotlib.pyplot as plt
 from task1_data_collection import get_trending_coins
 from task2_data_processing import process_data
 
-
-# Create the figure and axes once
 fig, ax = plt.subplots(figsize=(10, 6))
-
-
 while plt.fignum_exists(fig.number):
 
     coins = get_trending_coins()
