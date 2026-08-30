@@ -8,6 +8,10 @@ fig, ax = plt.subplots(figsize=(10, 6))
 while plt.fignum_exists(fig.number):
 
     coins = get_trending_coins()
+    if coins is None:
+        print("Waiting for the next API attempt...")
+        plt.pause(60)
+        continue
     df = process_data(coins)
     df = df.sort_values("price_change_24h", ascending=False)
 

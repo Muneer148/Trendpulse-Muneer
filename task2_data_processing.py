@@ -3,6 +3,9 @@ from task1_data_collection import get_trending_coins
 coins = get_trending_coins()
 
 def process_data(coins):
+    if coins is None:
+        print('No Data to Process from the API. Skipping Processing.....')
+        return None
     df = pd.DataFrame(coins)
 
     df["market_cap"] = pd.to_numeric(
