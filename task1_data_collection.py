@@ -1,11 +1,19 @@
+import requests
+
+
 def get_trending_coins():    
-    import requests
 
     url = "https://api.coingecko.com/api/v3/search/trending"
-    response = requests.get(url)
 
-    print(response.status_code)
-    print(response.text[:500])
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        print(f"HTTP Status: {response.status_code}")
+        print("API request successful!")
+
+    except requests.exceptions.RequestException as e:
+        print("API request failed:", e)
+        return None
 
     data = response.json()
     print(type(data))     
