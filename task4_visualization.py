@@ -39,7 +39,5 @@ while plt.fignum_exists(fig.number):
     ax.set_title("TrendPulse — Live Trending Coin Price Changes")
 
     ax.invert_yaxis()
-
     plt.tight_layout()
-
     plt.pause(60)
